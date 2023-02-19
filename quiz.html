@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Mukta:wght@500&family=Noto+Sans+JP:wght@500&family=Roboto:wght@100;300&family=Rubik&family=Source+Sans+Pro:wght@200&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div>
+
+            <h1>Quizzzz</h1>
+        </div>
+        <div>
+
+            <button>Login</button>
+        </div>
+    </header>
+    <div id="contain_er_div">
+
+        <button>
+            <h1>Start Quizz</h1>
+
+        </button>
+
+    </div>
+
+    <div id="first_question">
+        <div id="first_innerdiv">
+            <!-- <div> -->
+            <h2 id="quest">1) what is your name</h2>
+            <!-- </div> -->
+            <div> <input id="option" type="radio" value="a" name="option" />
+                <label></label>
+            </div>
+            <div><input id="option" type="radio" value="b" name="option" /><label></label></div>
+            <div><input id="option" type="radio" value="c" name="option" /><label></label></div>
+            <div><input id="option" type="radio" value="d" name="option" /><label></label></div>
+
+        </div>
+
+        <div id="buttons_div">
+            <div id="currentno">1/10</div>
+            <div onclick="previous()">Prev</div>
+            <div onclick="submitquizz()">Submit</div>
+            <div onclick="changeQuestion()">Next</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="./quiz.js"></script>

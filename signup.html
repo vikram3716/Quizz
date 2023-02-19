@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+    <div id="container_di">
+        <div id="modal">
+            <h2 style="text-align: center;">Signup</h2>
+            <div id="child_div_1">
+                <label>Name</label>
+                <input id="name" type="text" placeholder="Name" />
+            </div>
+
+            <div id="child_div_1">
+                <label>Email</label>
+                <input id="email" type="text" placeholder="Email" />
+            </div>
+
+            <div id="child_div_1">
+                <label>Password</label>
+                <input id="password" type="password" placeholder="Password" />
+            </div>
+
+            <div id="submitbutton" onclick="storeData()">Signup</div>
+            <h3 style="text-align: center;padding: 0px;margin: 0%;">Or</h3>
+            <div id="submitbutton" onclick="gotologin()">Login</div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function gotologin() {
+        location.href = "index.html";
+    }
+
+    let arr = JSON.parse(localStorage.getItem("userforquiz")) || [];
+    function storeData() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+
+        let obj = {
+            name: name,
+            email: email,
+            password: password,
+        }
+
+        arr.push(obj);
+        localStorage.setItem("userforquiz", JSON.stringify(arr));
+
+    }
+
+
+</script>

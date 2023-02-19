@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+    <div id="container_di">
+        <div id="modal">
+            <h2 style="text-align: center;">Login</h2>
+
+
+            <div id="child_div_1">
+                <label>Email</label>
+                <input id="emaill" type="text" placeholder="Email" />
+            </div>
+
+            <div id="child_div_1">
+                <label>Password</label>
+                <input id="passwordd" type="password" placeholder="Password" />
+            </div>
+
+            <div id="submitbutton" onclick="login()">Login</div>
+            <h3 style="text-align: center;padding: 0px;margin: 0%;">Or</h3>
+            <div id="submitbutton" onclick="Gotosignuppage()">Signup</div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function Gotosignuppage() {
+        location.href = "signup.html";
+    }
+    let arr = JSON.parse(localStorage.getItem("userforquiz")) || [];
+
+    function login() {
+        let b = false;
+        let email = document.getElementById("emaill").value;
+        let password = document.getElementById("passwordd").value;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].email == email) {
+                if (arr[i].password == password) {
+                    b = true;
+                    console.log(arr[i].name)
+                    localStorage.setItem("usernamee", arr[i].name)
+                    break;
+                }
+            }
+        }
+
+        if (b == true) {
+            location.href = "quiz.html"
+        }
+
+    }
+
+</script>
